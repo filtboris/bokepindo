@@ -30,6 +30,7 @@ export async function generateMetadata(
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     const data = await doodstream.getFile({ file_code: params.id as string });
+     const upstream = await doodstream.getUpstream();
     if (data.status !== 200) {
         return {
             title: data.msg,
@@ -60,6 +61,9 @@ export async function generateMetadata(
             title,
             description,
             images: [...previousOgImages, image],
+            url: `/v/${file.filecode}`,
+            type: `video.other`,
+            videos: `https://${upstream}/e/${file.filecode}`,
         },
         alternates: {
             canonical: `/v/${file.filecode}`,
@@ -86,7 +90,7 @@ export default async function Video({ params }: PageProps) {
         <div className="grid col-span-full gap-4 md:gap-4 md:mx-10">
             <iframe
                 className="w-full h-[30vh] md:h-[55vh] lg:h-[70vh]"
-                src={`https://${upstream}/${file.protected_embed}`}
+                src={`https://${upstream}${file.protected_embed}`}
                 scrolling="no"
                 title={file.title}
                 frameBorder={0}
