@@ -14,6 +14,16 @@ export const metadata: Metadata = {
     alternates: {
         canonical: `/`,
     },
+    openGraph: {
+        title: `${SITENAME} Video Bokep Indo Jepang Barat Viral Terbaru`,
+        description: `${SITENAME} Video bokep indo jepang indonesia barat terbaru viral korea simontok china tante live sma paksa ngentot abg jilbab cewek bocil smp pijat pelajar.`,
+        url: `/`,
+        type: `website`,
+    },
+    verification: {
+        google: 'pesrxXN7kZtrUUZkOECVN6vldle4ji4e052MmUaJxOo',
+        yandex: '1cd8e24cfae1d3b9',
+    },
 };
 
 export const runtime = "edge";
